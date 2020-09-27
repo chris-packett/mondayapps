@@ -93,3 +93,7 @@ If you want to actively change server-side code and restart the server, you can 
 3. Update the value in the source column and in a few moments the target one will be update with the transformed text
 4. Enjoy your recipe!   
 
+# Notes
+
+Find who's listening on specified $PORT
+lsof -nP -iTCP:$PORT | grep LISTEN
