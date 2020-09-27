@@ -5,9 +5,12 @@ const bodyParser = require('body-parser');
 const routes = require('./routes');
 
 dotenv.config();
-app.use(bodyParser.json());
-app.use(routes);
-app.listen(process.env.PORT, () =>
+
+const port = process.env.PORT;
+
+app.use(bodyParser.json()).use(routes);
+
+app.listen(port, () =>
     console.log(`Dynamic Typeform Generator listening at http://localhost:${port}`));
 
 module.exports = app;

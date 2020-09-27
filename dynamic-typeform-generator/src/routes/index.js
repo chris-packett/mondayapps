@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const typeformRoutes = require('./typeform');
+const authorizationRoutes = require('./authorization');
 
-router.use(typeformRoutes);
+router.use(typeformRoutes, authorizationRoutes);
 
 router.get('/', function (req, res) {
   const health = getHealth();
