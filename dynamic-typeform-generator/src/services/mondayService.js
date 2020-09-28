@@ -20,7 +20,7 @@ class MondayService {
 
       const response = await mondayClient.api(query, { variables });
 
-      return response.data.boards[0].columns;
+      return response.data.boards[0];
     } catch (err) {
       console.log(err);
     }

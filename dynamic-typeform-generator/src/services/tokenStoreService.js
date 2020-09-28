@@ -18,7 +18,18 @@ class TokenStoreService {
     }
 
     static async getToken (userId, serviceName) {
+        userId = userId.toString();
 
+        const userToken = await UserToken.findOne({
+            where: {
+                userId,
+                serviceName
+            }
+        });
+
+        const { accessToken } = userToken;
+
+        return accessToken;
     }
 }
 
